@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 
-
+# Function to scrape job information from GitHub repository page
 def get_job_info():
+    """Scrape job information from a GitHub repository page and return a list of job details."""
     git_url = "https://github.com/SimplifyJobs/Summer2025-Internships"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
@@ -23,9 +24,9 @@ def get_job_info():
 
             # Ensure this row has the expected number of columns and contains valid job data
             if len(columns) >= 4:
-                job_name = columns[0].text.strip()
-                job_title = columns[1].text.strip()
-                location = columns[2].text.strip()
+                job_name = columns[0].text.strip()      # Company name
+                job_title = columns[1].text.strip()     # Job title
+                location = columns[2].text.strip()      # Location
 
                 # Check if the row likely represents a real job entry
                 if job_name and job_title and location and "↳" not in job_name:
@@ -41,18 +42,7 @@ def get_job_info():
                     }
 
                     job_list.append(job_info)
-
-        # Print the job information
-        for job in job_list[:20]:  # Limit to the first 20 jobs
-            print(f"Company: {job['Company']}")
-            print(f"Title: {job['Title']}")
-            print(f"Location: {job['Location']}")
-            print(f"Link: {job['Link']}")
-            print("-" * 40)
-
-        print("Successfully retrieved 20 jobs.")
+        return job_list
     else:
-        print("Failed to fetch the webpage:", response.status_code)
-
-
-get_job_info()
+        print("Failed to fetch job listings:", response.status_code)
+        return []
