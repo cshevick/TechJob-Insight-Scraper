@@ -34,17 +34,17 @@ The TechCrunch & GitHub Job Scraper is designed to provide users with recent Tec
 
 ## Usage
 Running the Script
-- **Run ArticleScraper.py to scrape data, generate summaries, and create the HTML file.
-- **Upon successful execution, the HTML output (techcrunch_news.html) will display:
-**Left Column: Recent TechCrunch articles with summaries.
-**Right Column: Latest job postings from GitHub with "Apply" links.
+- Run ArticleScraper.py to scrape data, generate summaries, and create the HTML file.
+- Upon successful execution, the HTML output (techcrunch_news.html) will display:
+    - **Left Column**: Recent TechCrunch articles with summaries.
+    - **Right Column**: Latest job postings from GitHub with "Apply" links.
 
 
 ## Project Structure
-- **ArticleScraper.py: Main script for scraping TechCrunch articles, summarizing content, and generating the HTML output.
-- **GithubScraper.py: A separate module to handle GitHub job scraping.
+- ArticleScraper.py: Main script for scraping TechCrunch articles, summarizing content, and generating the HTML output.
+- GithubScraper.py: A separate module to handle GitHub job scraping.
 techcrunch_news.html: HTML output file displaying articles and jobs side-by-side.
 
 ## License
-**This project is open source and licensed under the MIT License.
+This project is open source and licensed under the MIT License.
 
