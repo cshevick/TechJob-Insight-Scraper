@@ -1,50 +1,15 @@
 # TechJob Insight Scraper
 
-A web scraping application that fetches recent articles from TechCrunch and the latest job postings from a GitHub repository. This application summarizes articles using NLP and presents a split-screen HTML file with article summaries on one side and job listings on the other. This application is designed to help users stay updated on recent tech news and know when new internships are posted.
+A web scraping application that scrapes recent articles from TechCrunch and the latest tech internship postings from a GitHub repository using BeautifulSoup and Requests. It then summarizes the articles using a pre-trained NLP model (BART). The application then creates an HTML file with a split-screen layout that displays the recent articles and a summary for each, along with the 20 most recent internship postings with the position name, location, and link to apply for each. This application allows the user to stay up to date with tech news as well as internship postings. 
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Requirements](#requirements) 
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [License](#license)
-
-## Overview
-
-The TechJob Insight Scraper is designed to provide users with recent TechCrunch articles along with relevant job postings. Each article is summarized using NLP models, and job postings display the company name, job title, location, and a direct "Apply" link. The final output is a split-screen HTML file displaying both articles and job listings for easy browsing.
-
-- **TechCrunch Article Summarization**: Fetch and summarize the latest TechCrunch articles.
-- **Job Listings from GitHub**: Retrieve recent job postings from a GitHub repository for internships.
-- **HTML Output**: Generates a split-screen HTML layout displaying articles on one side and job listings on the other.
-
-## Features
-
-- **Web Scraping**: Uses BeautifulSoup and Requests to scrape data from TechCrunch and GitHub.
-- **Text Summarization**: Leverages a pre-trained NLP model (BART) to summarize long-form articles.
-- **HTML Generation**: Creates a dynamic HTML file with a split-screen layout for articles and jobs.
-
-## Requirements
-
-- **Python 3.7+**
-- **BeautifulSoup4**: For HTML parsing
-- **Requests**: For sending HTTP requests
-- **Transformers (Hugging Face)**: For text summarization using the BART model
-- **Torch**: Required by Transformers for the summarization model
+## Installation
+   1. Clone the repository in IDE of choice using: https://github.com/cshevick/TechJob-Insight-Scraper.git
+   2. Install the required dependencies: pip install beautifulsoup4 requests transformers torch pandas
 
 ## Usage
-Running the Script
-- Run ArticleScraper.py to scrape data, generate summaries, and create the HTML file.
-- Upon successful execution, the HTML output (techcrunch_news.html) will display:
-    - **Left Column**: Recent TechCrunch articles with summaries.
-    - **Right Column**: Latest job postings from GitHub with "Apply" links.
 
-
-## Project Structure
-- ArticleScraper.py: Main script for scraping TechCrunch articles, summarizing content, and generating the HTML output.
-- GithubScraper.py: A separate module to handle GitHub job scraping.
-techcrunch_news.html: HTML output file displaying articles and jobs side-by-side.
+Once you have cloned the repository in your IDE, run the 'ArticleScraper.py' python script. Upon successful completion, the program produces an HTML file that you can preview either in the built-in IDE HTML previewer, if available, or you can run in any HTML previewer in your browser, which will display the ten most recent TechCrunch articles and twenty most recent tech internships and info for each one.
 
 ## License
-This project is open source and licensed under the MIT License.
+This project is open source and licensed under the MIT License. Feel free to modify and use the code as per your needs.
 
