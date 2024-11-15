@@ -1,4 +1,4 @@
-# Tech Buddy
+# TechJob Insight Scraper
 
 A web scraping application that fetches recent articles from TechCrunch and the latest job postings from a GitHub repository. This application summarizes articles using NLP and presents a split-screen HTML file with article summaries on one side and job listings on the other. This application is designed to help users stay updated on recent tech news and know when new internships are posted.
 
@@ -12,7 +12,7 @@ A web scraping application that fetches recent articles from TechCrunch and the 
 
 ## Overview
 
-The TechCrunch & GitHub Job Scraper is designed to provide users with recent TechCrunch articles along with relevant job postings. Each article is summarized using NLP models, and job postings display the company name, job title, location, and a direct "Apply" link. The final output is a split-screen HTML file displaying both articles and job listings for easy browsing.
+The TechJob Insight Scraper is designed to provide users with recent TechCrunch articles along with relevant job postings. Each article is summarized using NLP models, and job postings display the company name, job title, location, and a direct "Apply" link. The final output is a split-screen HTML file displaying both articles and job listings for easy browsing.
 
 - **TechCrunch Article Summarization**: Fetch and summarize the latest TechCrunch articles.
 - **Job Listings from GitHub**: Retrieve recent job postings from a GitHub repository for internships.
