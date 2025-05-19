@@ -4,7 +4,7 @@ from transformers import pipeline
 import torch
 import GithubScraper  # import other scraper
 
-# Set up the summarizer
+
 device = 0 if torch.cuda.is_available() else -1
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device=device)
 
@@ -80,20 +80,20 @@ def scrape_and_summarize_techcrunch_articles():
             file.write("<h1>Welcome, Tech Buddy</h1>\n")
             file.write("<div class='container'>\n")
 
-            # Articles Section
+          
             file.write("<div class='articles-section'>\n")
             file.write("<h2>TechCrunch 10 Most Recent Articles and Summaries</h2>\n")
             file.write("<ul>\n")
 
-            for article in articles[:10]:  # Limit to the first 10 articles
+            for article in articles[:10]: 
                 title = article.text.strip()
                 url = article['href']
 
-                # Get the article content and summarize it
+              
                 article_text = get_article_content(url)
                 summary = summarize_long_text(article_text) if article_text else "Summary not available."
 
-                # Write the article title, URL, and summary to the HTML file
+              
                 file.write(f"<li><a href='{url}' target='_blank'>{title}</a><br>\n")
                 file.write(f"<p><strong>Summary:</strong> {summary}</p></li><br><br>\n")
 
@@ -113,7 +113,7 @@ def scrape_and_summarize_techcrunch_articles():
                 file.write(f"Link: <a href='{job['Link']}' target='_blank'>Apply</a></p><br>")
 
             file.write("</div>\n")
-            file.write("</div>\n")  # Close container
+            file.write("</div>\n")  
             file.write("</body>\n")
             file.write("</html>\n")
 
