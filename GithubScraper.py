@@ -13,24 +13,24 @@ def get_job_info():
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
 
-        # Select all rows in the table
-        rows = soup.find_all('tr')  # Table rows
+      
+        rows = soup.find_all('tr')  
 
         job_list = []
 
-        # Loop through each row and extract job details
-        for row in rows[1:]:  # Skip header row
-            columns = row.find_all('td')  # Find all cells in the row
+        
+        for row in rows[1:]:  
+            columns = row.find_all('td')  
 
-            # Ensure this row has the expected number of columns and contains valid job data
+          
             if len(columns) >= 4:
-                job_name = columns[0].text.strip()      # Company name
-                job_title = columns[1].text.strip()     # Job title
-                location = columns[2].text.strip()      # Location
+                job_name = columns[0].text.strip()     
+                job_title = columns[1].text.strip()   
+                location = columns[2].text.strip()    
 
-                # Check if the row likely represents a real job entry
+             
                 if job_name and job_title and location and "↳" not in job_name:
-                    # Attempt to find the application link, if it exists
+                  
                     apply_link_tag = columns[3].find('a')
                     apply_link = apply_link_tag['href'] if apply_link_tag else "No link available"
 
